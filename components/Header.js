@@ -33,12 +33,6 @@ export default function Header() {
             className="rounded-sm shrink-0"
             priority
           />
-          <span className="hidden xl:block font-display text-lg tracking-wide text-cream leading-tight whitespace-nowrap">
-            {settings.short_name}
-            <span className="block text-[0.7rem] uppercase tracking-[0.2em] text-gold">
-              Abogados &amp; Consultores
-            </span>
-          </span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-7">

@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 
-Sitemap: /sitemap.xml
+Sitemap: https://lhlopezm2.github.io/bermudez-mosquera-abogados-y-consultores/sitemap.xml

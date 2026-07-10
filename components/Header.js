@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import settings from '@/content/site/settings.json';
+import { withBasePath } from '@/lib/basePath';
 
 const NAV_LINKS = [
   { href: '/', label: 'Inicio' },
@@ -21,7 +22,7 @@ export default function Header() {
       <div className="container-page flex items-center justify-between py-3">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <Image
-            src={settings.logo}
+            src={withBasePath(settings.logo)}
             alt={settings.firm_name}
             width={44}
             height={44}

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import settings from '@/content/site/settings.json';
+import { withBasePath } from '@/lib/basePath';
 
 function whatsappLink(number, message) {
   const text = encodeURIComponent(message || '');
@@ -43,7 +44,7 @@ export default function Footer() {
       <div className="container-page py-14 grid gap-10 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center gap-3 mb-4">
-            <Image src={settings.logo} alt={settings.firm_name} width={40} height={40} />
+            <Image src={withBasePath(settings.logo)} alt={settings.firm_name} width={40} height={40} />
             <span className="font-display text-cream">{settings.firm_name}</span>
           </div>
           <p className="text-sm text-cream/70 max-w-sm">{settings.footer_note}</p>

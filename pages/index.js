@@ -5,6 +5,7 @@ import SectionHeading from '@/components/SectionHeading';
 import PracticeAreaCard from '@/components/PracticeAreaCard';
 import BlogCard from '@/components/BlogCard';
 import settings from '@/content/site/settings.json';
+import { withBasePath } from '@/lib/basePath';
 import {
   getHomeContent,
   getPracticeAreas,
@@ -19,7 +20,7 @@ export default function Home({ home, practiceAreas, latestPosts }) {
       {/* HERO */}
       <section className="relative overflow-hidden bg-graphite">
         <div className="absolute inset-0 opacity-[0.06] pointer-events-none">
-          <Image src={settings.logo} alt="" fill className="object-cover" />
+          <Image src={withBasePath(settings.logo)} alt="" fill className="object-cover" />
         </div>
         <div className="container-page relative py-28 md:py-36 text-center fade-in-up">
           <span className="text-gold text-xs uppercase tracking-[0.3em] font-semibold">

@@ -28,12 +28,12 @@ export default function Header() {
           <Image
             src={withBasePath(settings.logo)}
             alt={settings.firm_name}
-            width={64}
-            height={64}
-            className="rounded-sm"
+            width={88}
+            height={88}
+            className="rounded-sm shrink-0"
             priority
           />
-          <span className="font-display text-base md:text-lg tracking-wide text-cream leading-tight">
+          <span className="hidden xl:block font-display text-lg tracking-wide text-cream leading-tight whitespace-nowrap">
             {settings.short_name}
             <span className="block text-[0.7rem] uppercase tracking-[0.2em] text-gold">
               Abogados &amp; Consultores

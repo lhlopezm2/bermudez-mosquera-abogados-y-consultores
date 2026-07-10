@@ -1,0 +1,30 @@
+{
+  "title": "Preguntas Frecuentes",
+  "subtitle": "Respuestas claras a las dudas más comunes de nuestros clientes.",
+  "items": [
+    {
+      "question": "¿Cómo puedo solicitar una primera cita o cotización?",
+      "answer": "Puede escribirnos por WhatsApp, completar el formulario de contacto en esta página o enviarnos un correo electrónico. Le responderemos en menos de 24 horas hábiles para agendar una primera reunión, presencial o virtual."
+    },
+    {
+      "question": "¿La consulta inicial tiene algún costo?",
+      "answer": "La primera consulta de orientación general no tiene costo. Si su caso requiere un análisis documental extenso o la elaboración de un concepto jurídico formal, le informaremos previamente los honorarios correspondientes."
+    },
+    {
+      "question": "¿Atienden casos fuera de Cartago?",
+      "answer": "Sí. Además de Cartago, atendemos clientes en todo el norte del Valle del Cauca y adelantamos trámites y procesos ante entidades y despachos judiciales a nivel nacional cuando el caso lo requiere."
+    },
+    {
+      "question": "¿Qué áreas del derecho manejan?",
+      "answer": "Nos especializamos en derecho civil, derecho administrativo, derecho empresarial, propiedad horizontal y contratación estatal. Consulte la sección de Áreas de Práctica para más detalle."
+    },
+    {
+      "question": "¿Cómo se determinan los honorarios?",
+      "answer": "Los honorarios dependen de la complejidad, duración estimada y modalidad del caso (asesoría puntual, trámite, litigio o acompañamiento permanente). Siempre se informan por escrito antes de iniciar cualquier gestión."
+    },
+    {
+      "question": "¿Puedo hacer seguimiento a mi caso en línea?",
+      "answer": "Sí. Mantenemos comunicación permanente por WhatsApp y correo electrónico, e informamos oportunamente cada novedad relevante de su proceso."
+    }
+  ]
+}

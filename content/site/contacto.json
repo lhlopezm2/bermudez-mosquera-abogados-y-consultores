@@ -1,0 +1,15 @@
+{
+  "title": "Contacto y Agendamiento",
+  "subtitle": "Cuéntenos su caso. Nuestro equipo revisará su solicitud y le contactará en menos de 24 horas hábiles.",
+  "form_success_message": "Gracias por escribirnos. Hemos recibido su solicitud y nos pondremos en contacto muy pronto.",
+  "services_options": [
+    "Derecho Civil",
+    "Derecho Administrativo",
+    "Derecho Empresarial",
+    "Propiedad Horizontal",
+    "Contratación Estatal",
+    "Otro / No estoy seguro"
+  ],
+  "scheduling_title": "Agendamiento de citas",
+  "scheduling_text": "Agende su cita de forma directa a través de WhatsApp indicando su disponibilidad, o complete el formulario y coordinaremos el horario que mejor le convenga."
+}

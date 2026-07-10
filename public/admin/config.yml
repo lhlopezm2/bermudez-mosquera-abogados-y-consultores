@@ -1,0 +1,175 @@
+# Configuración de Decap CMS para Bermúdez Mosquera Abogados & Consultores
+#
+# EDICIÓN LOCAL (mientras no hay repositorio remoto en GitHub):
+#   1. npm install
+#   2. npm run cms      (levanta decap-server en local, puerto 8081)
+#   3. npm run dev       (en otra terminal)
+#   4. Abrir http://localhost:3000/admin
+#   local_backend permite editar y guardar los cambios directamente en los
+#   archivos de /content sin necesidad de OAuth ni de un repositorio remoto.
+#
+# EDICIÓN EN PRODUCCIÓN (GitHub Pages):
+#   Cuando el sitio se despliegue en GitHub Pages, reemplazar el backend por:
+#
+#   backend:
+#     name: github
+#     repo: usuario/nombre-del-repositorio
+#     branch: main
+#
+#   Esto requiere crear una GitHub OAuth App y un pequeño servidor proxy de
+#   autenticación (por ejemplo, la función de OAuth de Decap CMS desplegada
+#   en Netlify/Vercel de forma gratuita). Ver README.md para el paso a paso.
+
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+publish_mode: editorial_workflow
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+locale: "es"
+
+collections:
+  - name: "ajustes"
+    label: "Ajustes Generales"
+    files:
+      - name: "settings"
+        label: "Datos de la Firma"
+        file: "content/site/settings.json"
+        fields:
+          - { label: "Nombre completo de la firma", name: "firm_name", widget: "string" }
+          - { label: "Nombre corto", name: "short_name", widget: "string" }
+          - { label: "Eslogan", name: "tagline", widget: "string" }
+          - { label: "Logo", name: "logo", widget: "image" }
+          - { label: "Teléfono (para mostrar)", name: "phone_display", widget: "string" }
+          - { label: "Número de WhatsApp (solo dígitos, con código de país)", name: "whatsapp_number", widget: "string" }
+          - { label: "Mensaje predeterminado de WhatsApp", name: "whatsapp_message", widget: "text" }
+          - { label: "Correo de contacto", name: "email_contact", widget: "string" }
+          - { label: "Ciudad", name: "city", widget: "string" }
+          - { label: "Dirección (texto)", name: "address_line", widget: "string" }
+          - { label: "Horario de atención", name: "schedule", widget: "string" }
+          - label: "Redes sociales"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "Instagram", name: "instagram", widget: "string", required: false }
+              - { label: "Facebook", name: "facebook", widget: "string", required: false }
+              - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+              - { label: "TikTok", name: "tiktok", widget: "string", required: false }
+              - { label: "YouTube", name: "youtube", widget: "string", required: false }
+          - { label: "Nota de pie de página", name: "footer_note", widget: "text" }
+
+      - name: "home"
+        label: "Página de Inicio"
+        file: "content/site/home.json"
+        fields:
+          - { label: "Texto pequeño sobre el título (eyebrow)", name: "hero_eyebrow", widget: "string" }
+          - { label: "Título principal", name: "hero_title", widget: "string" }
+          - { label: "Subtítulo", name: "hero_subtitle", widget: "text" }
+          - { label: "Texto botón principal", name: "hero_cta_primary", widget: "string" }
+          - { label: "Texto botón secundario", name: "hero_cta_secondary", widget: "string" }
+          - label: "Propuestas de valor"
+            name: "value_props"
+            widget: "list"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Texto", name: "text", widget: "text" }
+          - label: "Estadísticas"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Número", name: "number", widget: "string" }
+              - { label: "Descripción", name: "label", widget: "string" }
+          - { label: "Título del banner final", name: "cta_banner_title", widget: "string" }
+          - { label: "Texto del banner final", name: "cta_banner_text", widget: "text" }
+
+      - name: "quienes-somos"
+        label: "Quiénes Somos"
+        file: "content/site/quienes-somos.json"
+        fields:
+          - { label: "Título de la sección", name: "title", widget: "string" }
+          - { label: "Introducción", name: "intro", widget: "text" }
+          - { label: "Historia", name: "history", widget: "text" }
+          - { label: "Misión", name: "mission", widget: "text" }
+          - { label: "Visión", name: "vision", widget: "text" }
+          - label: "Valores"
+            name: "values"
+            widget: "list"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Texto", name: "text", widget: "text" }
+          - { label: "Introducción a fundadores", name: "founders_intro", widget: "text" }
+          - label: "Socios Fundadores"
+            name: "founders"
+            widget: "list"
+            fields:
+              - { label: "Rol", name: "role", widget: "string" }
+              - { label: "Especialidad", name: "focus", widget: "string" }
+              - { label: "Biografía", name: "bio", widget: "text" }
+
+      - name: "faq"
+        label: "Preguntas Frecuentes"
+        file: "content/site/faq.json"
+        fields:
+          - { label: "Título", name: "title", widget: "string" }
+          - { label: "Subtítulo", name: "subtitle", widget: "text" }
+          - label: "Preguntas"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Pregunta", name: "question", widget: "string" }
+              - { label: "Respuesta", name: "answer", widget: "text" }
+
+      - name: "contacto"
+        label: "Contacto y Agendamiento"
+        file: "content/site/contacto.json"
+        fields:
+          - { label: "Título", name: "title", widget: "string" }
+          - { label: "Subtítulo", name: "subtitle", widget: "text" }
+          - { label: "Mensaje de éxito del formulario", name: "form_success_message", widget: "text" }
+          - { label: "Opciones de servicio", name: "services_options", widget: "list", field: { label: "Opción", name: "option", widget: "string" } }
+          - { label: "Título de agendamiento", name: "scheduling_title", widget: "string" }
+          - { label: "Texto de agendamiento", name: "scheduling_text", widget: "text" }
+
+  - name: "areas-de-practica"
+    label: "Áreas de Práctica"
+    folder: "content/practice-areas"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Slug (URL)", name: "slug", widget: "string" }
+      - { label: "Resumen corto", name: "summary", widget: "text" }
+      - { label: "Orden", name: "order", widget: "number", default: 1 }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "casos-de-exito"
+    label: "Casos de Éxito"
+    folder: "content/case-studies"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Slug (URL)", name: "slug", widget: "string" }
+      - { label: "Sector / Área", name: "sector", widget: "string" }
+      - { label: "Reto (resumen)", name: "challenge", widget: "text" }
+      - { label: "Resultado (resumen)", name: "result", widget: "text" }
+      - { label: "Orden", name: "order", widget: "number", default: 1 }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "blog"
+    label: "Blog Jurídico"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Slug (URL)", name: "slug", widget: "string" }
+      - { label: "Fecha", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Categoría", name: "category", widget: "string" }
+      - { label: "Etiquetas", name: "tags", widget: "list" }
+      - { label: "Extracto", name: "excerpt", widget: "text" }
+      - { label: "Contenido", name: "body", widget: "markdown" }

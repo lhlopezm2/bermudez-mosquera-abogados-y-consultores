@@ -1,0 +1,21 @@
+{
+  "firm_name": "Bermúdez Mosquera Abogados & Consultores",
+  "short_name": "Bermúdez Mosquera",
+  "tagline": "Excelencia jurídica con visión estratégica",
+  "logo": "/images/logo.jpg",
+  "phone_display": "+57 333 643 2674",
+  "whatsapp_number": "573336432674",
+  "whatsapp_message": "Hola, quisiera solicitar más información sobre sus servicios jurídicos.",
+  "email_contact": "karito_0516@hotmail.com",
+  "city": "Cartago, Valle del Cauca, Colombia",
+  "address_line": "Cartago, Valle del Cauca, Colombia",
+  "schedule": "Lunes a viernes: 8:00 a.m. – 6:00 p.m. / Sábados: 8:00 a.m. – 12:00 m.",
+  "social": {
+    "instagram": "https://www.instagram.com/bermudezmosquera.legal",
+    "facebook": "",
+    "linkedin": "",
+    "tiktok": "",
+    "youtube": ""
+  },
+  "footer_note": "Firma jurídica boutique especializada en derecho civil, administrativo, empresarial, propiedad horizontal y contratación estatal, al servicio de Cartago y el Valle del Cauca."
+}

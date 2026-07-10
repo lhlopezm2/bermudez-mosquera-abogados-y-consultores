@@ -1,0 +1,33 @@
+{
+  "hero_eyebrow": "Firma jurídica boutique",
+  "hero_title": "Excelencia jurídica, con visión estratégica",
+  "hero_subtitle": "Asesoría y representación legal de alto nivel para personas, empresas y entidades públicas en Cartago y el Valle del Cauca.",
+  "hero_cta_primary": "Solicitar una cita",
+  "hero_cta_secondary": "Conocer áreas de práctica",
+  "value_props": [
+    {
+      "title": "Experiencia comprobada",
+      "text": "Más de una década asesorando casos civiles, administrativos y empresariales con resultados verificables."
+    },
+    {
+      "title": "Atención personalizada",
+      "text": "Cada cliente recibe una estrategia jurídica hecha a la medida de su caso, no soluciones genéricas."
+    },
+    {
+      "title": "Discreción y confianza",
+      "text": "Manejo confidencial de la información y comunicación transparente durante todo el proceso."
+    },
+    {
+      "title": "Cobertura regional",
+      "text": "Representación en Cartago, el norte del Valle del Cauca y trámites ante entidades a nivel nacional."
+    }
+  ],
+  "stats": [
+    { "number": "10+", "label": "Años de experiencia" },
+    { "number": "300+", "label": "Casos gestionados" },
+    { "number": "6", "label": "Áreas de práctica" },
+    { "number": "95%", "label": "Clientes que nos recomiendan" }
+  ],
+  "cta_banner_title": "¿Necesita asesoría jurídica confiable?",
+  "cta_banner_text": "Cuéntenos su caso y le contactaremos en menos de 24 horas hábiles."
+}

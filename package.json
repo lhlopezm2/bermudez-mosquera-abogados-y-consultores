@@ -3,15 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_OPTIONS=--dns-result-order=ipv4first next dev",
     "cms": "decap-server",
-    "build": "next build && node scripts/generate-sitemap.js",
+    "build": "NODE_OPTIONS=--dns-result-order=ipv4first next build && node scripts/generate-sitemap.js",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
-    "next": "14.2.5",
+    "next": "^14.2.35",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "remark": "^15.0.1",
@@ -21,7 +21,7 @@
     "autoprefixer": "^10.4.19",
     "decap-server": "^3.2.0",
     "eslint": "^8.57.0",
-    "eslint-config-next": "14.2.5",
+    "eslint-config-next": "^14.2.35",
     "postcss": "^8.4.39",
     "tailwindcss": "^3.4.4"
   }

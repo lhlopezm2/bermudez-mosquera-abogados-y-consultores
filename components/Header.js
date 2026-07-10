@@ -41,14 +41,14 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-cream/90 hover:text-gold transition-colors"
+              className="text-sm text-cream/90 hover:text-gold transition-colors rounded-sm outline-none focus-visible:ring-1 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-graphite"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden lg:block ml-8 shrink-0">
           <Link href="/contacto" className="btn-gold">
             Agendar Cita
           </Link>

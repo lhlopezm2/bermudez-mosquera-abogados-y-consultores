@@ -19,19 +19,23 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-graphite/95 backdrop-blur border-b border-white/10">
-      <div className="container-page flex items-center justify-between py-3">
-        <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
+      <div className="container-page flex items-center justify-between py-2.5">
+        <Link
+          href="/"
+          className="flex items-center gap-3 rounded-sm outline-none focus-visible:ring-1 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-graphite"
+          onClick={() => setOpen(false)}
+        >
           <Image
             src={withBasePath(settings.logo)}
             alt={settings.firm_name}
-            width={44}
-            height={44}
+            width={64}
+            height={64}
             className="rounded-sm"
             priority
           />
-          <span className="font-display text-sm md:text-base tracking-wide text-cream leading-tight">
+          <span className="font-display text-base md:text-lg tracking-wide text-cream leading-tight">
             {settings.short_name}
-            <span className="block text-[0.65rem] uppercase tracking-[0.2em] text-gold">
+            <span className="block text-[0.7rem] uppercase tracking-[0.2em] text-gold">
               Abogados &amp; Consultores
             </span>
           </span>

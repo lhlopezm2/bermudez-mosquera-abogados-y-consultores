@@ -44,7 +44,7 @@ export default function Footer() {
       <div className="container-page py-14 grid gap-10 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center gap-3 mb-4">
-            <Image src={withBasePath(settings.logo)} alt={settings.firm_name} width={40} height={40} />
+            <Image src={withBasePath(settings.logo)} alt={settings.firm_name} width={56} height={56} className="rounded-sm" />
             <span className="font-display text-cream">{settings.firm_name}</span>
           </div>
           <p className="text-sm text-cream/70 max-w-sm">{settings.footer_note}</p>

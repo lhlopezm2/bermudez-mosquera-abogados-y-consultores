@@ -1,14 +1,26 @@
 {
   "title": "Quiénes Somos",
-  "intro": "Bermúdez Mosquera Abogados & Consultores es una firma jurídica boutique fundada por un equipo con formación complementaria en derecho civil, administrativo y empresarial, unido por una misma convicción: la práctica del derecho debe combinar rigor técnico, cercanía humana y visión estratégica.",
+  "intro": "Bermudez Mosquera Abogados & Consultores es una firma jurídica boutique fundada por un equipo con formación complementaria en derecho civil, administrativo y empresarial, unido por una misma convicción: la práctica del derecho debe combinar rigor técnico, cercanía humana y visión estratégica.",
   "history": "Nacimos en Cartago, Valle del Cauca, con el propósito de ofrecer a personas, empresas y entidades públicas de la región un acompañamiento jurídico del más alto estándar, comparable al de las firmas de las grandes ciudades, pero con la cercanía y el compromiso de un equipo que conoce a fondo el territorio y sus particularidades.",
   "mission": "Proteger los intereses legales de nuestros clientes mediante estrategias jurídicas rigurosas, éticas y efectivas, acompañándolos con claridad en cada etapa de su proceso.",
   "vision": "Ser reconocidos como la firma de referencia en el norte del Valle del Cauca para la asesoría en derecho civil, administrativo, empresarial y contratación estatal, proyectando estándares de servicio internacionales.",
   "values": [
-    { "title": "Excelencia", "text": "Buscamos el más alto nivel técnico en cada concepto, escrito y audiencia." },
-    { "title": "Integridad", "text": "Actuamos con transparencia y ética profesional inquebrantable." },
-    { "title": "Cercanía", "text": "Explicamos el derecho en un lenguaje claro, sin tecnicismos innecesarios." },
-    { "title": "Compromiso", "text": "Defendemos cada caso como si fuera el único que tenemos." }
+    {
+      "title": "Excelencia",
+      "text": "Buscamos el más alto nivel técnico en cada concepto, escrito y audiencia."
+    },
+    {
+      "title": "Integridad",
+      "text": "Actuamos con transparencia y ética profesional inquebrantable."
+    },
+    {
+      "title": "Cercanía",
+      "text": "Explicamos el derecho en un lenguaje claro, sin tecnicismos innecesarios."
+    },
+    {
+      "title": "Compromiso",
+      "text": "Defendemos cada caso como si fuera el único que tenemos."
+    }
   ],
   "founders_intro": "La firma es dirigida por sus dos socios fundadores, quienes combinan visión empresarial y litigiosa para atender cada caso desde múltiples ángulos.",
   "founders": [

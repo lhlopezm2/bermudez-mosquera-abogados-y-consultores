@@ -1,0 +1,6 @@
+{
+  "name": "decap-cms-oauth-proxy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Servidor OAuth para permitir el login con GitHub en Decap CMS (el sitio principal vive en GitHub Pages, que no puede ejecutar este intercambio por ser hosting estático)."
+}

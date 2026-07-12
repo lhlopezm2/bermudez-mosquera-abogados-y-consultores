@@ -1,28 +1,26 @@
 # Configuración de Decap CMS para Bermúdez Mosquera Abogados & Consultores
 #
-# EDICIÓN LOCAL (mientras no hay repositorio remoto en GitHub):
+# EDICIÓN LOCAL (en tu computador):
 #   1. npm install
 #   2. npm run cms      (levanta decap-server en local, puerto 8081)
 #   3. npm run dev       (en otra terminal)
 #   4. Abrir http://localhost:3000/admin
 #   local_backend permite editar y guardar los cambios directamente en los
-#   archivos de /content sin necesidad de OAuth ni de un repositorio remoto.
+#   archivos de /content sin necesidad de OAuth. Solo se activa en localhost,
+#   así que no interfiere con la edición en producción de abajo.
 #
-# EDICIÓN EN PRODUCCIÓN (GitHub Pages):
-#   Cuando el sitio se despliegue en GitHub Pages, reemplazar el backend por:
-#
-#   backend:
-#     name: github
-#     repo: usuario/nombre-del-repositorio
-#     branch: main
-#
-#   Esto requiere crear una GitHub OAuth App y un pequeño servidor proxy de
-#   autenticación (por ejemplo, la función de OAuth de Decap CMS desplegada
-#   en Netlify/Vercel de forma gratuita). Ver README.md para el paso a paso.
+# EDICIÓN EN PRODUCCIÓN (https://bermudezmosquera.com/admin):
+#   Requiere una GitHub OAuth App + el proxy de autenticación en oauth-proxy/
+#   (ver oauth-proxy/README.md y la sección 7 del README.md principal).
+#   Reemplaza <URL-DEL-PROXY-EN-VERCEL> por la URL real una vez desplegado
+#   en Vercel, por ejemplo: https://bermudez-mosquera-oauth.vercel.app/api
 
 backend:
-  name: git-gateway
+  name: github
+  repo: lhlopezm2/bermudez-mosquera-abogados-y-consultores
   branch: main
+  base_url: <URL-DEL-PROXY-EN-VERCEL>
+  auth_endpoint: auth
 
 local_backend: true
 

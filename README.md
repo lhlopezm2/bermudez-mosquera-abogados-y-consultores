@@ -71,23 +71,40 @@ Mientras esa variable no esté configurada, el formulario funciona en modo de re
 
 El workflow ya calcula `NEXT_PUBLIC_BASE_PATH` y `NEXT_PUBLIC_SITE_URL` a partir del nombre del repositorio, así que no hay que tocarlo salvo que se use un dominio propio (ver punto 8).
 
-## 7. Pasar Decap CMS a modo producción (edición desde la web ya publicada)
+## 7. Decap CMS en producción (edición desde bermudezmosquera.com/admin)
 
-Cuando el sitio esté en GitHub Pages, para que el CMS funcione en línea (sin `npm run cms`) hay que:
+GitHub Pages es hosting estático: no puede guardar el "client secret" de
+GitHub ni hacer el intercambio OAuth de código por token. Por eso, además
+del sitio, este repo incluye `oauth-proxy/`: un pequeño servidor que sí hace
+ese intercambio, pensado para desplegarse por separado en Vercel (gratis).
 
-1. Crear una **GitHub OAuth App** (Settings → Developer settings → OAuth Apps).
-2. Desplegar un pequeño servidor "proxy" de autenticación OAuth para Decap CMS (gratuito, por ejemplo la función lista para usar de Vercel: https://github.com/vencax/netlify-cms-github-oauth-provider, o el proveedor OAuth oficial de Decap).
-3. En `public/admin/config.yml`, cambiar el backend a:
-   ```yaml
-   backend:
-     name: github
-     repo: usuario/nombre-del-repositorio
-     branch: main
-     base_url: https://tu-proxy-oauth.vercel.app
-   ```
-4. Quitar o dejar `local_backend: true` (no afecta producción; solo se activa en `localhost`).
+Pasos para activarlo (una sola vez):
 
-Esto es un paso posterior, no bloquea el uso actual del sitio ni la edición local de contenido.
+1. **Crear la GitHub OAuth App**: GitHub → Settings (de tu usuario) →
+   Developer settings → OAuth Apps → New OAuth App.
+   - Homepage URL: `https://bermudezmosquera.com`
+   - Authorization callback URL: `https://<tu-proyecto>.vercel.app/api/callback`
+     (el nombre exacto del proyecto lo defines al desplegar en el paso 2;
+     puedes editar esta URL en la OAuth App después si cambia).
+   - Guarda el **Client ID** y genera un **Client Secret**.
+2. **Desplegar `oauth-proxy/` en Vercel**:
+   - Crear cuenta en https://vercel.com (gratis, con GitHub).
+   - "Add New… → Project" → importar este repositorio.
+   - En "Root Directory" seleccionar `oauth-proxy`.
+   - En "Environment Variables" agregar `OAUTH_CLIENT_ID` y
+     `OAUTH_CLIENT_SECRET` con los valores del paso 1.
+   - Desplegar. Vercel te da una URL como `https://bermudez-mosquera-oauth.vercel.app`.
+   - Si la callback URL de la OAuth App no coincide con la URL final, edítala
+     en GitHub para que sea `https://<esa-url>/api/callback`.
+3. **Actualizar `public/admin/config.yml`**: reemplazar `<URL-DEL-PROXY-EN-VERCEL>`
+   por `https://<esa-url>/api` (con `/api` al final).
+4. Hacer commit y push. Ya se podrá iniciar sesión con GitHub en
+   `https://bermudezmosquera.com/admin` (solo funcionará para cuentas de
+   GitHub con permiso de escritura sobre este repositorio).
+
+`local_backend: true` no afecta producción; solo se activa cuando el sitio
+corre en `localhost`, así que la edición local (sección 4) sigue funcionando
+igual.
 
 ## 8. Dominio propio y analítica (cuando estén disponibles)
 

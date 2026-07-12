@@ -4,60 +4,27 @@
 // de Decap CMS que abrió el popup, mediante window.postMessage.
 
 function renderMessagePage(status, content) {
-  // Protocolo esperado por decap-cms-backend-github:
+  // Protocolo esperado por decap-cms-lib-auth (NetlifyAuthenticator):
   // 1. El popup avisa "authorizing:github" a la ventana que lo abrió.
-  // 2. La ventana principal responde (para confirmar el origin).
+  // 2. La ventana principal responde (confirma su origin al popup).
   // 3. El popup responde con "authorization:github:success:{...}" o
-  //    "authorization:github:error:{...}".
-  //
-  // El texto visible de abajo es solo diagnóstico temporal: permite ver en
-  // pantalla qué paso del handshake se completó, sin depender de que la
-  // consola del navegador estuviera abierta a tiempo.
+  //    "authorization:github:error:{...}", y se cierra solo.
   return `
 <!DOCTYPE html>
 <html>
-  <body style="font-family: monospace; padding: 20px; font-size: 14px; line-height: 1.6;">
-    <div id="log">Cargando…</div>
+  <body>
     <script>
       (function () {
-        var logEl = document.getElementById("log");
-        function log(msg) {
-          logEl.innerHTML += "<br>" + msg;
-        }
-
-        log("Script iniciado.");
-
-        if (!window.opener) {
-          log("ERROR: window.opener es null. Esta ventana no se abrió como popup vinculado a /admin (o el navegador rompió el vínculo). El login no puede completarse así.");
-          return;
-        }
-        log("window.opener detectado correctamente.");
-
         function receiveMessage(message) {
-          log("Mensaje recibido de vuelta desde /admin (origin: " + message.origin + "). Enviando token final...");
-          try {
-            window.opener.postMessage(
-              'authorization:github:${status}:${JSON.stringify(content)}',
-              message.origin
-            );
-            log("Token enviado. Puedes cerrar esta ventana.");
-          } catch (e) {
-            log("ERROR al enviar el token: " + e.message);
-          }
+          window.opener.postMessage(
+            'authorization:github:${status}:${JSON.stringify(content)}',
+            message.origin
+          );
           window.removeEventListener("message", receiveMessage, false);
+          window.close();
         }
         window.addEventListener("message", receiveMessage, false);
-
-        try {
-          window.opener.postMessage("authorizing:github", "*");
-          log("Aviso 'authorizing:github' enviado a /admin. Esperando respuesta...");
-        } catch (e) {
-          log("ERROR al avisar a /admin: " + e.message);
-        }
-
-        setTimeout(function () {
-          log("(Han pasado 4 segundos sin respuesta de /admin, si no ves más líneas arriba el problema está en esa pestaña, no aquí.)");
-        }, 4000);
+        window.opener.postMessage("authorizing:github", "*");
       })();
     </script>
   </body>

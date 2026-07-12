@@ -18,8 +18,8 @@ backend:
   name: github
   repo: lhlopezm2/bermudez-mosquera-abogados-y-consultores
   branch: main
-  base_url: https://bermudez-mosquera-abogados-y-consul.vercel.app/api
-  auth_endpoint: auth
+  base_url: https://bermudez-mosquera-abogados-y-consul.vercel.app
+  auth_endpoint: api/auth
 
 local_backend: true
 

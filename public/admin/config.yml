@@ -12,14 +12,13 @@
 # EDICIÓN EN PRODUCCIÓN (https://bermudezmosquera.com/admin):
 #   Requiere una GitHub OAuth App + el proxy de autenticación en oauth-proxy/
 #   (ver oauth-proxy/README.md y la sección 7 del README.md principal).
-#   Reemplaza <URL-DEL-PROXY-EN-VERCEL> por la URL real una vez desplegado
-#   en Vercel, por ejemplo: https://bermudez-mosquera-oauth.vercel.app/api
+#   El proxy está desplegado en Vercel; base_url apunta a ese dominio.
 
 backend:
   name: github
   repo: lhlopezm2/bermudez-mosquera-abogados-y-consultores
   branch: main
-  base_url: <URL-DEL-PROXY-EN-VERCEL>
+  base_url: https://bermudez-mosquera-abogados-y-consul.vercel.app/api
   auth_endpoint: auth
 
 local_backend: true
